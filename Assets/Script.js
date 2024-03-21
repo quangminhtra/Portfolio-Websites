@@ -1,12 +1,13 @@
-// add class navbarDark on navbar scroll
-const header = document.querySelector('.navbar');
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
 
-window.onscroll = function() {
-    var top = window.scrollY;
-    if(top >=100) {
-        header.classList.add('navbarDark');
-    }
-    else {
-        header.classList.remove('navbarDark');
-    }
-}
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+
+        window.scrollTo({
+            top: targetElement.offsetTop - 150, // Height of the footer + some extra space
+            behavior: 'smooth'
+        });
+    });
+});

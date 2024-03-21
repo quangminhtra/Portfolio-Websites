@@ -1,105 +1,175 @@
-/* hero background image */
-.bgimage {
-    height:100vh;
-    background: url('images/backgroundmain.jpg');
-    background-size:cover;
-    position:relative;
-}
-/* text css above hero image*/
-.hero_title {
-    font-size: 4.5rem;
-}
-.hero_desc {
-    font-size: 2rem;
-}
-.hero-text {
+/* for homepage section */
+#home {
+    position: relative;
     text-align: center;
+    font-size: 36px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    text-shadow: 0 0 10px #fff, 0 0 15px #000000; /* Simplified for readability */
+    padding: 100px 0; /* Adjust padding as needed */
+    color: #fff; /* Ensures text is readable on the image */
+}
+
+#home::before {
+    content: '';
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('images/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(8px); /* Increased blur for more effect */
+    opacity: 0.9; /* Adjust for desired transparency, 70% as originally requested */
+    z-index: -1; /* Ensures the content stays on top */
 }
 
-/* Navbar css */
-.navbar {
-    background-color: #ffffff;
-    padding: 10px;
+/* Additional styles if you want to add a color overlay for better contrast */
+#home::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+    z-index: -1;
+    opacity: 0.7; /* 70% opacity */
 }
 
-.navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333333;
+/*Navigation bar/
+/* Path: Assets/style.css */
+/* for navigation bar */
+/* https://picular.co/bluemoon */
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;400i;700&display=swap");
+
+body {
+  font-family: "Work Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
 }
 
-.navbar-nav {
-    margin-left: auto;
-}
+/* ... other styles ... */
 
-.nav-link {
-    font-size: 18px;
-    color: #333333;
-    margin-right: 15px;
-}
-
-.nav-link:hover {
-    color: #ff0000;
-}
-/* END: nav-style */
-/* about section image css */
-.imageAboutPage {
-    width: 100%;
-}
-
-/* services section css */
-.servicesText.card {
-    height: 280px;
-    cursor: pointer;
+nav#navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    backdrop-filter: blur(10px); /* Optional: adds a blur effect to the navbar */
+    background-color: #1f1f20; /* Example background color */
+    box-shadow: 0 2px 5px rgba(190, 176, 176, 0.2); /* Optional: adds a shadow for depth */
   }
-.servicesIcon {
-    font-size: 36px;
-    text-align: center;
+  
+  nav#navbar a {
+    --fill-color: #c9d1d7;
+    position: relative;
+    display: block;
+    margin: 0 10px;
+    padding: 10px 15px; /* Add some padding for the links */
+    font-weight: 700;
+    font-size: 1.5rem; /* Adjusted font size for better visibility */
+    text-decoration: none;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--fill-color); /* Adjusted text stroke for better visibility */
+    background: linear-gradient(var(--fill-color) 0 100%) left / 0 no-repeat;
+    background-clip: text;
+    transition: background-size 0.5s linear;
+  }
+  
+  nav#navbar a:hover {
+    background-size: 100% 100%;
+  }
+/*footer section*/
+
+body {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 200px; /* Footer height + extra space */
+    /* Other styles */
+}
+
+footer {
+    /* Remove position: fixed; */
     width: 100%;
+    background-color: #000; /* Footer background color */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif; /* Choose your font */
 }
-.card-title {
-    text-align: center;
+
+.footer-left, .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
-.card:hover .servicesIcon {
-    color: #008000;
+
+.footer-right {
+    align-items: flex-end;
+    text-align: right;
 }
-.servicesText:hover {
-    border: 1px solid #008000;
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000; /* Footer background color */
+    color: #fff;
+    display: flex;
 }
 
 
-/* display background color black on navbar scroll */
-.navbarScroll.navbarDark {
-    background-color: black;
+.footer-nav a, .social-icons a, .contact-info a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+    padding: 8px 0; /* Adds top and bottom padding for clickable area */
 }
 
-/* social media icons styling */
+.footer-nav a:hover, .social-icons a:hover, .contact-info a:hover {
+    color: #198CE6; /* Adjust hover color as needed */
+}
+
+
+
+.footer-nav a {
+    font-size: 15px; /* Adjust the font size as needed */
+    font-family: work sans, sans-serif;
+    margin-right: 20px; /* Updated value to move the navigation bar to the right by 20px */
+}
+
 .social-icons {
-    font-size: 36px;
-    cursor: pointer;
-}
-.fa-facebook:hover,.fa-instagram:hover,.fa-twitter:hover,.fa-linkedin:hover, .fa-twitch:hover {
-    color: #008000;
-}
-.fab {
-    color: #000000;
-}
-/* footer styling */
-#footer {
-    background-color: #808080;
-    text-align: center;
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center;
 }
 
-/* spacing on all sections */
-#about, #services, #portfolio, #contact {
-    margin-top: 4rem;
-    padding-top: 4rem;
+.social-icons a {
+    font-size: 2.5em; /* Updated icon size */
+    margin-right: 20px; /* Add space between each icon */
+    margin-bottom: 10px; /* Add space between each icon */
 }
-#contact {
-    padding-bottom: 4rem;
-}
+
+/* Ensure to include Font Awesome CDN for icons in your HTML */
+
+/* Ensure to include the Font Awesome CDN in your HTML */
+
+
+
+
+
+
+
+  /* About me section*/
+  
